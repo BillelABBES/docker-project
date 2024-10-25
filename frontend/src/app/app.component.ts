@@ -11,17 +11,16 @@ export class AppComponent  implements OnInit  {
 
   backResponse = ''
 
-  public constructor(private httpClient : HttpClient){
-
-  }
+  public constructor(private httpClient : HttpClient){}
 
   ngOnInit(): void {
-     this.httpClient.get(
-       "http://localhost:8080",
-     ).subscribe(
-       (response : any ) => {
-         this.backResponse = response
-       }
-     )
- }
+    this.httpClient.get(
+      "http://backend:8080",
+    ).subscribe(
+      (response: any) => {
+        this.backResponse = response;
+      },
+
+    );
+  }
 }
